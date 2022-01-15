@@ -41,7 +41,7 @@ async function clearUserFolders(divisa, pageToken = '', foldersIDsPool = []) {
 	pageToken
 	});
 
-// In the very first request *pageToken* will be empty, that's fine. It will get a value if the Array *foldersIDsPool* gains more than 100 IDs. Note: 100 is the API default value to deliver.
+// In the very first request *pageToken* will be empty, that's Okay. It will get a value if the Array *foldersIDsPool* gains more than 100 IDs. Note: 100 is the API default value to deliver.
 
 	foldersIDsPool.push(data.files);
 	const apiResIDs = data.files;  // Storing the body result which is in Json array format. *apiResIDs*-->Iterable.
@@ -92,7 +92,7 @@ clearUserFolders(divisa).then(clearUserFiles).catch(Error); // Asynchronous even
 
 
 /*  *  *  *  *  *  *  *  *  *  *  *  *  *  *
-Here the number 3 and 4 assignments performing the same logic but fetching for those true files that NOT were inside any folder that is, in the upper layer of Google Drive.
+Here the number 3 and 4 assignments performing the same logic but now fetching for those true files that NOT were inside any folder that is, in the upper layer of Google Drive.
 *  *  *  *  *  *  *  *  *  *  *  *  *  *  */
 async function clearUserFiles(divisa, pageToken = '', filesIDsPool = []) {
 
@@ -142,4 +142,3 @@ async function clearUserFiles(divisa, pageToken = '', filesIDsPool = []) {
 
 
 
-/*   O k a y   */
