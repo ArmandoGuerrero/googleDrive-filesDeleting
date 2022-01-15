@@ -50,7 +50,7 @@ Google APIs library needs this property must be named ***auth***
 	pageToken
 	});
 ```
-In the very first request ***pageToken*** will be empty, that's Okay. It will get a value if the Array ***foldersIDsPool*** gains more than 100 IDs. Note: 100 is the API default value to deliver. It is possible to request a larger number of files IDs, but a moderate number of files IDs it is better to avoid the quota limit. 
+In the very first request ***pageToken*** will be empty, that's Okay. It will get a value if the Array ***foldersIDsPool*** gains more than 100 IDs. Note: 100 is the API default value to deliver. It is possible to request a larger number of files IDs, but a moderate request number of files it is better in order not to reach the quota limit!
 ```JavaScript
 	foldersIDsPool.push(data.files);
 	const apiResIDs = data.files;  // Storing the body result which is in Json array format. *apiResIDs*-->Iterable.
