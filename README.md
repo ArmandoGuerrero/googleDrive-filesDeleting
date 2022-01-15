@@ -10,8 +10,8 @@ const {google} = require('googleapis');
 ```
 Using a json file provided by Google Workspace Service Account
 ```JavaScript
-process.env.GOOGLE_APPLICATION_CREDENTIALS = './298b752exAw23.json'
 const credentials = require('./298b752exAw23.json');
+process.env.GOOGLE_APPLICATION_CREDENTIALS = './298b752exAw23.json' // Better as Environment Variable when production stage.
 const scopes = ['https://www.googleapis.com/auth/drive', 'https://www.googleapis.com/auth/drive.readonly', 'https://www.googleapis.com/auth/drive.file'];
 ```
 The user in your domain to perform the total files delete process.
@@ -105,9 +105,9 @@ Once all folders was deleted, we need to wait for Google servers to propagues an
 clearUserFolders(divisa).then(clearUserFiles).catch(Error); // Asynchronous events.
 ```
 
-/*  *  *  *  *  *  *  *  *  *  *  *  *  *  *
+***
 Here the number 3 and 4 assignments performing the same logic but now fetching for those true files that NOT were inside any folder that is, in the upper layer of Google Drive.
-*  *  *  *  *  *  *  *  *  *  *  *  *  *  */
+***
 
 ```JavaScript
 async function clearUserFiles(divisa, pageToken = '', filesIDsPool = []) {
@@ -153,9 +153,7 @@ async function clearUserFiles(divisa, pageToken = '', filesIDsPool = []) {
 }
 ```
 
-***P &nbsp; A &nbsp;  R &nbsp;  A &nbsp;  L &nbsp;  L &nbsp;  E &nbsp;  L &nbsp;  &nbsp;     M E T H O D    C O M I N G   S O O N  ! ! !
-//  _______________________  0  _________________________   //
-
+***PARALLEL METHOD  COMING SOON !!!***
 
 
 ### Cheeeeers for all!
