@@ -41,7 +41,7 @@ async function clearUserFolders(divisa, pageToken = '', foldersIDsPool = []) {
 	pageToken
 	});
 
-// In the very first request *pageToken* will be empty, that's Okay. It will get a value if the Array *foldersIDsPool* gains more than 100 IDs. Note: 100 is the API default value to deliver. It is possible to request a larger number of files IDs, but a moderate number of files IDs it is better to avoid the quota limit.
+// In the very first request *pageToken* will be empty, that's Okay. It will get a value if the Array *foldersIDsPool* gains more than 100 IDs. Note: 100 is the API default value to deliver. It is possible to request a larger number of files IDs, but a moderate request number of files it is better in order not to reach the quota limit!
 
 	foldersIDsPool.push(data.files);
 	const apiResIDs = data.files;  // Storing the body result which is in Json array format. *apiResIDs*-->Iterable.
@@ -69,7 +69,7 @@ async function clearUserFolders(divisa, pageToken = '', foldersIDsPool = []) {
 	totalFolders += Object.keys(apiResIDs).length; // Optional to check the amount of files.
 
 
-//  The *await* dumpThisIds();  is very important to ensure that the next 100 files are requested only when a prior 100 chunk has been deleted. *nextPageToken* request is also deferred in order not to reach the quota!
+//  The *await* dumpThisIds();  is very important to ensure that the next 100 files are requested only when a prior 100 chunk has been deleted. *nextPageToken* request is also deferred.
 	await dumpThisIds();   // Calling the Assignment 2/4. 
 
 // *nextPageToken* received in the result body? If there is another page of ID's to be looked at - repeat again.
