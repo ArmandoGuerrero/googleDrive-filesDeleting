@@ -1,4 +1,4 @@
-# Google Drive - Programmatically files deleting using JavaScript & Node.js.
+# Google Drive - Files deleting programmatically using JavaScript & Node.js.
 ### Delete large number of files and folders in Google Drive using a Service Account and an impersonate Email as user account. Tested deleting over two thousand files in Google Drive without exceeding the Google Work Space quota.  
 
 ***ATTENTION. NOT for production ready!. It is important to add code to fix possible errors and misbehaves!***
@@ -104,11 +104,17 @@ Once all folders was deleted, we need to wait for Google servers to propagues an
 
 clearUserFolders(divisa).then(clearUserFiles).catch(Error); // Asynchronous events.
 ```
-
+  
+<br/>
+<br/>
+  
 ***
 Here the number 3 and 4 assignments performing the same logic but now fetching for those true files that NOT were inside any folder that is, in the upper layer of Google Drive.
 ***
-
+  
+<br/>  
+<br/>
+  
 ```JavaScript
 async function clearUserFiles(divisa, pageToken = '', filesIDsPool = []) {
 
@@ -156,5 +162,5 @@ async function clearUserFiles(divisa, pageToken = '', filesIDsPool = []) {
 ***PARALLEL METHOD  COMING SOON !!!***
 
 
-### Cheeeeers for all!
+## Cheeeeers for all!
 
