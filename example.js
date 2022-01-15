@@ -23,7 +23,7 @@ var totalFiles = 0; totalFolders = 0;   // Optional
 
 // IMPORTANT! To save Google APIs quota we will code to delete first the folders in the user's Google Drive. As we know, when a folder is deleted all the contains files AND folders inside will be deleted too.
 
-//  We need to use an Asynchronous function to get control over the time, in order to do NOT exceed the API quota limits.
+//  We need to use an Asynchronous function: *timerToDelete* to get control over the time, in order to do NOT exceed the API quota limits.
 
 // *foldersIDsPool* is the array to warehouse all the received data.
 async function clearUserFolders(divisa, pageToken = '', foldersIDsPool = []) {
