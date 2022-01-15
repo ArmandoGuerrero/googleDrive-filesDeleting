@@ -5,9 +5,9 @@
 
 const {google} = require('googleapis');
 
-// process.env.GOOGLE_APPLICATION_CREDENTIALS = './298b752exAw23.json'
 // Using a json file provided by Google Workspace Service Account
 const credentials = require('./298b752exAw23.json');
+/* process.env.GOOGLE_APPLICATION_CREDENTIALS = './298b752exAw23.json'   Better as Environment Variable when production stage. */
 const scopes = ['https://www.googleapis.com/auth/drive', 'https://www.googleapis.com/auth/drive.readonly', 'https://www.googleapis.com/auth/drive.file'];
 
 // The user in your domain to perform the total files delete process.
@@ -94,6 +94,7 @@ clearUserFolders(divisa).then(clearUserFiles).catch(Error); // Asynchronous even
 /*  *  *  *  *  *  *  *  *  *  *  *  *  *  *
 Here the number 3 and 4 assignments performing the same logic but now fetching for those true files that NOT were inside any folder that is, in the upper layer of Google Drive.
 *  *  *  *  *  *  *  *  *  *  *  *  *  *  */
+
 async function clearUserFiles(divisa, pageToken = '', filesIDsPool = []) {
 
 // Google APIs library needs this variable or property must be named *auth*
