@@ -153,7 +153,7 @@ async function clearUserFiles(divisa, pageToken = '', filesIDsPool = []) {
 }
 ```
 
-//  P A R A L L E L    M E T H O D    C O M I N G   S O O N  ! ! !
+***P &nbsp; A &nbsp;  R &nbsp;  A &nbsp;  L &nbsp;  L &nbsp;  E &nbsp;  L &nbsp;  &nbsp;     M E T H O D    C O M I N G   S O O N  ! ! !
 //  _______________________  0  _________________________   //
 
 
