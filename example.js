@@ -41,7 +41,7 @@ async function clearUserFolders(divisa, pageToken = '', foldersIDsPool = []) {
 	pageToken
 	});
 
-// In the very first request *pageToken* will be empty, that's Okay. It will get a value if the Array *foldersIDsPool* gains more than 100 IDs. Note: 100 is the API default value to deliver.
+// In the very first request *pageToken* will be empty, that's Okay. It will get a value if the Array *foldersIDsPool* gains more than 100 IDs. Note: 100 is the API default value to deliver. It is possible to request a larger number of files IDs, but a moderate number of files IDs it is better to avoid the quota limit.
 
 	foldersIDsPool.push(data.files);
 	const apiResIDs = data.files;  // Storing the body result which is in Json array format. *apiResIDs*-->Iterable.
