@@ -80,16 +80,19 @@ This Function will be called later. Works to spawn a 500 milliseconds rate betwe
 	totalFolders += Object.keys(apiResIDs).length; // Optional to check the amount of files.
 ```
 
-//  The *await* dumpThisIds();  is very important to ensure that the next 100 files are requested only when a prior 100 chunk has been deleted. *nextPageToken* request is also deferred in order not to reach the quota!
+The ***await dumpThisIds();***  is very important to ensure that the next 100 files are requested only when a prior 100 chunk has been deleted. ***nextPageToken*** request is also deferred in order not to reach the quota!
+```JavaScript
 	await dumpThisIds();   // Calling the Assignment 2/4. 
-
-// *nextPageToken* received in the result body? If there is another page of ID's to be looked at - repeat again.
+```
+***nextPageToken*** received in the result body? If there is another page of ID's to be looked at - repeat again.
+```JavaScript
 	if (data.nextPageToken) {
 		await clearUserFolders(divisa, data.nextPageToken, foldersIDsPool);
 	} else {
 	    console.log("#   #   #   #   #   #   # TOTAL FOLDERS: ", totalFolders);  // Optional
-		
-// Once all folders was deleted, we need to wait for Google servers to propagues and updates the user's Google Drive state. Without this timeout chances are to get errors for the next step.
+```
+Once all folders was deleted, we need to wait for Google servers to propagues and updates the user's Google Drive state. Without this timeout chances are to get errors for the next step.
+```JavaScript
 		async function timerToRefreshAPI(updating) {
 			return new Promise(resolve => {
 				setTimeout(() => { resolve('') }, updating);
@@ -100,7 +103,7 @@ This Function will be called later. Works to spawn a 500 milliseconds rate betwe
 }
 
 clearUserFolders(divisa).then(clearUserFiles).catch(Error); // Asynchronous events.
-
+```
 
 /*  *  *  *  *  *  *  *  *  *  *  *  *  *  *
 Here the number 3 and 4 assignments performing the same logic but fetching for those true files that NOT were inside any folder that is, in the upper layer of Google Drive.
