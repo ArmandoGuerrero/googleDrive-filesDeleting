@@ -80,7 +80,7 @@ This Function will be called later. Works to spawn a 500 milliseconds rate betwe
 	totalFolders += Object.keys(apiResIDs).length; // Optional to check the amount of files.
 ```
 
-In order not to reach the quota limit, the ***await*** dumpThisIds(); is very important to ensure that the next 100 files are requested only when a prior 100 chunk has been deleted. ***nextPageToken*** request is also deferred.
+The ***await*** dumpThisIds(); is very important to ensure that the next 100 files are requested only when a prior 100 chunk has been deleted. ***nextPageToken*** request is also deferred.
 ```JavaScript
 	await dumpThisIds();   // Calling the Assignment 2/4. 
 ```
