@@ -1,5 +1,5 @@
 # Google Drive - Files deleting programmatically using JavaScript & Node.js.
-### Delete huge number of files and folders in Google Drive using a Service Account and an impersonate Email as user account. Tested deleting over two thousand files in Google Drive without exceeding the Google Work Space quota.  
+### Delete huge number of files and folders in Google Drive using a Service Account and an impersonate Email as user account. Tested deleting over two thousand files in Google Drive without exceeding the Google WorkSpace quota.  
 
 ***ATTENTION. NOT for production ready!. It is important to add code to fix possible errors and misbehaves!***
 
@@ -50,7 +50,7 @@ Google APIs library needs this property must be named ***auth***
 	pageToken
 	});
 ```
-In the very first request ***pageToken*** will be empty, that's Okay. It will get a value if the Array ***foldersIDsPool*** gains more than 100 IDs. Note: 100 is the API default value to deliver.
+In the very first request ***pageToken*** will be empty, that's Okay. It will get a value if the Array ***foldersIDsPool*** gains more than 100 IDs. Note: 100 is the API default value to deliver. It is possible to request a larger number of files IDs, but a moderate number of files IDs it is better to avoid the quota limit. 
 ```JavaScript
 	foldersIDsPool.push(data.files);
 	const apiResIDs = data.files;  // Storing the body result which is in Json array format. *apiResIDs*-->Iterable.
@@ -80,7 +80,7 @@ This Function will be called later. Works to spawn a 500 milliseconds rate betwe
 	totalFolders += Object.keys(apiResIDs).length; // Optional to check the amount of files.
 ```
 
-The ***await dumpThisIds();***  is very important to ensure that the next 100 files are requested only when a prior 100 chunk has been deleted. ***nextPageToken*** request is also deferred in order not to reach the quota!
+In order not to reach the quota limit, the ***await*** dumpThisIds(); is very important to ensure that the next 100 files are requested only when a prior 100 chunk has been deleted. ***nextPageToken*** request is also deferred.
 ```JavaScript
 	await dumpThisIds();   // Calling the Assignment 2/4. 
 ```
